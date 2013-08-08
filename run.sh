@@ -49,7 +49,7 @@ info "Switching to path: $grunt_working_path"
 cd $grunt_working_path
 
 debug "$grunt_command"
-$grunt_command
+$($grunt_command)
 
 if [[ $? -ne 0 ]]
 then
