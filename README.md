@@ -4,6 +4,17 @@ A wercker step to execute commands using the grunt-cli.
 
 You should have nodejs installed and you have to add the `grunt` package to your package.json.
 
+## Example Usage
+
+In your [wercker.yml](http://devcenter.wercker.com/articles/werckeryml/) file under the `build` section: 
+
+``` bash
+build:
+  steps:
+    - grunt:
+        tasks: test
+```
+
 ## Arguments
 
 ### tasks
