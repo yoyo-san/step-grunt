@@ -49,9 +49,14 @@ info "Switching to path: $grunt_working_path"
 cd $grunt_working_path
 
 debug "$grunt_command"
-$($grunt_command)
 
-if [[ $? -ne 0 ]]
+set +e
+$grunt_command
+result="$?"
+set -e
+
+# Fail if it is not a success or warning
+if [[ result -ne 0 && result -ne 6 ]]
 then
     warn "$result"
     fail "grunt command failed"
