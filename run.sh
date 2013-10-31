@@ -38,16 +38,6 @@ if [ -n "$WERCKER_GRUNT_TASKS" ] ; then
     grunt_command="$grunt_command $WERCKER_GRUNT_TASKS"
 fi
 
-# Figure out the working directory
-if [ -n "$WERCKER_GRUNT_PATH" ] ; then
-  grunt_working_path="$WERCKER_GRUNT_PATH"
-else
-  grunt_working_path="$WERCKER_SOURCE_DIR"
-fi
-
-info "Switching to path: $grunt_working_path"
-cd $grunt_working_path
-
 debug "$grunt_command"
 
 set +e
