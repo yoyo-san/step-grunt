@@ -4,6 +4,10 @@ A wercker step to execute commands using the grunt-cli.
 
 You should have nodejs installed and you have to add the `grunt` package to your package.json.
 
+# What's new
+
+- Remove support for PATH, use cwd instead
+
 ## Example Usage
 
 In your [wercker.yml](http://devcenter.wercker.com/articles/werckeryml/) file under the `build` section: 
@@ -37,3 +41,13 @@ build:
 - type: boolean
 - optional: true (default: false)
 - description: Print a stack trace when exiting with a warning or fatal error.
+ 
+# Changelog
+
+## 0.0.6
+
+- Remove support for PATH, use cwd instead
+ 
+## 0.0.5
+
+- Initial release
