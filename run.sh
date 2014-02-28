@@ -11,6 +11,8 @@ if ! type grunt &> /dev/null ; then
         debug "npm version: $(npm --version)"
 
         info "installing grunt-cli"
+        npm config set ca "" --silent
+        sudo npm install npm -g --silent
         sudo npm install -g --silent grunt-cli
     fi
 else
