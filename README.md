@@ -44,6 +44,10 @@ build:
  
 # Changelog
 
+## 0.0.7
+
+- always update npm
+
 ## 0.0.6
 
 - Remove support for PATH, use cwd instead
