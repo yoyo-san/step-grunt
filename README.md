@@ -6,7 +6,7 @@ You should have nodejs installed and you have to add the `grunt` package to your
 
 # What's new
 
-- Remove support for PATH, use cwd instead
+- Use `grunt-cli` if it is installed in `./node_modules/grunt-cli`
 
 ## Example Usage
 
@@ -43,6 +43,10 @@ build:
 - description: Print a stack trace when exiting with a warning or fatal error.
  
 # Changelog
+
+## 0.0.8
+
+- Use `grunt-cli` if it is installed in `./node_modules/grunt-cli`
 
 ## 0.0.7
 
