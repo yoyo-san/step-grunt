@@ -44,6 +44,10 @@ build:
  
 # Changelog
 
+## 0.0.9
+
+- Fixed a bug in which `grunt` should have been installed via npm
+
 ## 0.0.8
 
 - Use `grunt-cli` if it is installed in `./node_modules/grunt-cli`

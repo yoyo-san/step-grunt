@@ -28,6 +28,7 @@ if ! type grunt &> /dev/null ; then
             npm config set ca "" --silent
             sudo npm install npm -g --silent
             sudo npm install -g --silent grunt-cli
+            grunt_command="grunt"
         fi
     else
         info "grunt is available locally"
