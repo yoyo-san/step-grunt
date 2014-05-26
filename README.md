@@ -32,17 +32,26 @@ build:
 - optional: true
 - description: Specify an alternate Gruntfile. By default, grunt looks in the source directory or it's parent directories for the nearest Gruntfile.js or Gruntfile.coffee file.
 
+### stack
+- type: boolean
+- optional: true (default: false)
+- description: Print a stack trace when exiting with a warning or fatal error.
+
+### verbose
+- type: boolean
+- optional: true (default: false)
+- description: Run grunt in verbose mode
+ 
 ### debug
 - type: boolean
 - optional: true (default: false)
 - description: Enable debugging mode for tasks that support it.
 
-### stack
-- type: boolean
-- optional: true (default: false)
-- description: Print a stack trace when exiting with a warning or fatal error.
- 
 # Changelog
+
+## 0.1.0
+
+- added: verbose option
 
 ## 0.0.9
 

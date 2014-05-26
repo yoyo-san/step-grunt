@@ -48,6 +48,10 @@ if [ "$WERCKER_GRUNT_DEBUG" = "true" ] ; then
     grunt_command="$grunt_command --debug"
 fi
 
+if [ "$WERCKER_GRUNT_VERBOSE" = "true" ] ; then
+    grunt_command="$grunt_command --verbose"
+fi
+
 if [ "$WERCKER_GRUNT_STACK" = "true" ] ; then
     grunt_command="$grunt_command --stack"
 fi
