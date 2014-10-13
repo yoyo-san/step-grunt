@@ -10,7 +10,7 @@ You should have nodejs installed and you have to add the `grunt` package to your
 
 ## Example Usage
 
-In your [wercker.yml](http://devcenter.wercker.com/articles/werckeryml/) file under the `build` section: 
+In your [wercker.yml](http://devcenter.wercker.com/articles/werckeryml/) file under the `build` section:
 
 ``` bash
 build:
@@ -19,12 +19,12 @@ build:
         tasks: test
 ```
 
-## Arguments
+## Properties
 
 ### tasks
 - type: string
 - optional: true
-- description: Tasks which should be run. You can use spaces to specify multiple tasks. If no tasks have been specified, then grunt-cli will run the `default` task. 
+- description: Tasks which should be run. You can use spaces to specify multiple tasks. If no tasks have been specified, then grunt-cli will run the `default` task.
 - example: `tasks: jshint buster`
 
 ### gruntfile
@@ -41,13 +41,22 @@ build:
 - type: boolean
 - optional: true (default: false)
 - description: Run grunt in verbose mode
- 
+
 ### debug
 - type: boolean
 - optional: true (default: false)
 - description: Enable debugging mode for tasks that support it.
 
+### fail-on-warnings
+- type: boolean
+- optional: true (default: false)
+- description: If grunt returns an error code of 6 (warning) then fail the build.
+
 # Changelog
+
+## 1.0.0
+
+- Add `fail-on-warnings` property.
 
 ## 0.1.0
 
@@ -68,7 +77,7 @@ build:
 ## 0.0.6
 
 - Remove support for PATH, use cwd instead
- 
+
 ## 0.0.5
 
 - Initial release

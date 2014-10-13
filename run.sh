@@ -71,11 +71,12 @@ $grunt_command
 result="$?"
 set -e
 
-# Fail if it is not a success or warning
-if [[ result -ne 0 && result -ne 6 ]]
-then
-    warn "$result"
-    fail "grunt command failed"
+if [[ $result -eq 0 ]]; then
+  success "finished $grunt_command"
+elif [[ $result -eq 6 && "$WERCKER_GRUNT_FAIL_ON_WARNINGS" != 'true' ]]; then
+  warn "grunt returned warnings, however fail-on-warnings is not true"
+  success "finished $grunt_command"
 else
-    success "finished $grunt_command"
+    warn "grunt exited with exit code: $result"
+    fail "grunt failed"
 fi
