@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 # return true if local npm package is installed at ./node_modules, else false
 # example
 # echo "gruntacular : $(npm_package_is_installed gruntacular)"
-function npm_package_is_installed {
+npm_package_is_installed() {
   # set to true initially
   local return_=true
   # set to false if not found
-  ls node_modules | grep $1 >/dev/null 2>&1 || { local return_=false; }
+  ls node_modules | grep "$1" >/dev/null 2>&1 || { local return_=false; }
   # return value
   echo "$return_"
 }
@@ -25,9 +25,7 @@ if ! type grunt &> /dev/null ; then
             debug "npm version: $(npm --version)"
 
             info "installing grunt-cli"
-            npm config set ca "" --silent
-            sudo npm install npm -g --silent
-            sudo npm install -g --silent grunt-cli
+            sudo npm install -g grunt-cli
             grunt_command="grunt"
         fi
     else
@@ -40,8 +38,6 @@ else
     debug "grunt version: $(grunt --version)"
     grunt_command="grunt"
 fi
-
-grunt_working_path=""
 
 # Parse some variable arguments
 if [ "$WERCKER_GRUNT_DEBUG" = "true" ] ; then

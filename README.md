@@ -2,11 +2,16 @@
 
 A wercker step to execute commands using the grunt-cli.
 
-You should have nodejs installed and you have to add the `grunt` package to your package.json.
+You should have nodejs and npm installed and you have to add the `grunt`
+package to your package.json.
+
+As of version `2.0.0` this won't update npm anymore. If you require a newer npm
+version install this before executing this step.
 
 # What's new
 
-- Use `grunt-cli` if it is installed in `./node_modules/grunt-cli`
+Do not install npm as part of the installation anymore. If your npm version is
+too old, update it manually using ascript step.
 
 ## Example Usage
 
@@ -53,6 +58,10 @@ build:
 - description: If grunt returns an error code of 6 (warning) then fail the build.
 
 # Changelog
+
+## 2.0.0
+
+- Do not upgrade npm as part of the installation
 
 ## 1.0.0
 
