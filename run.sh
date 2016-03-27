@@ -11,7 +11,7 @@ npm_package_is_installed() {
   # return value
   echo "$return_"
 }
-
+cd frontend
 # First make sure grunt is installed
 if ! type grunt &> /dev/null ; then
     # Check if it is in repo
